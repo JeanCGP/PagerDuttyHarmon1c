@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-striped table-hover table-bordered table-sm bg-white">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>title</td>
+            <td>created_at</td>
+            <td>unacknowledg_at</td>
+            <td>acknowledgements_name</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for incident in incidents %}
+          <tr>
+            <td><a href={{incident.0.html_url}}>{{incident.0.number}}</a></td>
+            <td>{{incident.0.title}}</td>
+            <td>{{incident.0.created_at}}</td>
+            <td>{{incident.0.unacknowledg_at}}</td>
+            <td>{{incident.0.acknowledgements_name}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
